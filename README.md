@@ -35,8 +35,8 @@
     <summary>
       <b>Enabling and disabling the motor</b>
     </summary>
-      To enable the motor, you have to call <code>stepper.enable();</code>.<br>
-      To disable the motor, you have to call <code>stepper.disable();</code>.
+      To enable the motor, you have to call <code>stepper.enableMotor();</code>.<br>
+      To disable the motor, you have to call <code>stepper.disableMotor();</code>.
       <br><br>
   </details>
   <details>
