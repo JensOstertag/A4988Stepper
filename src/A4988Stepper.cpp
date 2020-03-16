@@ -1,9 +1,10 @@
 #include "A4988Stepper.h"
 
-Stepper::Stepper(int direction, int step, int enable) {
+Stepper::Stepper(int direction, int step, int enable, int stepsPerRevolution) {
 	this->direction = direction;
 	this->step = step;
 	this->enable = enable;
+	this->stepsPerRevolution = stepsPerRevolution;
 }
 
 void Stepper::begin() {
@@ -13,7 +14,7 @@ void Stepper::begin() {
 }
 
 void Stepper::driveMotor(bool invert, int speed, int steps) {
-	int delay = int((500/speed) * 100);
+	unsigned long delay = 60L * 1000L * 1000L / this->stepsPerRevolution / speed;
 	
 	switch(invert) {
 		case true:

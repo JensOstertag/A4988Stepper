@@ -8,9 +8,10 @@ class Stepper {
 		int direction;
 		int step;
 		int enable;
+		int stepsPerRevolution;
 	
 	public:
-		Stepper(int direction, int step, int enable);
+		Stepper(int direction, int step, int enable, int stepsPerRevolution);
 		void begin();
 		
 		void driveMotor(bool invert, int speed, int steps);
