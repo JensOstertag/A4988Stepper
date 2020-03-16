@@ -27,7 +27,7 @@
     <summary>
       <b>Setting up the stepper motor</b>
     </summary>
-    At first, you have to set up the stepper motor by writing <code>Stepper stepper(direction, step, enable);</code>. The variables <code>direction</code>, <code>step</code> and <code>enable</code> are the corresponding pins of the driver board. Their data type is integer.<br>
+    At first, you have to set up the stepper motor by writing <code>Stepper stepper(direction, step, enable, stepsPerRevolution);</code>. The variables <code>direction</code>, <code>step</code> and <code>enable</code> are the corresponding pins of the driver board. Their data type is integer.<br> The variable <code>stepsPerRevolution</code> is the number of steps per revolution.
     Second, you have to set the mentioned pins as OUTPUTs. You can either do this manually or by calling the method <code>stepper.begin();</code>.
     <br><br>
   </details>
@@ -43,7 +43,7 @@
     <summary>
       <b>Driving the motor</b>
     </summary>
-      To drive motor, you have to call <code>stepper.driveMotor(invert, speed, steps)</code>. <code>invert</code> is a boolean, that determines the rotation direction of the motor. If it is set to false, the motor will rotate clockwise, if it is defined as true, the motor spins counter-clockwise. <code>speed</code> and <code>steps</code> both are integers, with <code>speed</code> you can specify the rotation speed (But this value stands in no context with the rotations per minute!) and with <code>steps</code> you can set the amount of steps the motor will turn.
+      To drive motor, you have to call <code>stepper.driveMotor(invert, speed, steps)</code>. <code>invert</code> is a boolean, that determines the rotation direction of the motor. If it is set to false, the motor will rotate clockwise, if it is defined as true, the motor spins counter-clockwise. <code>speed</code> and <code>steps</code> both are integers, with <code>speed</code> you can specify the rotation speed and with <code>steps</code> you can set the amount of steps the motor will turn.
       <br><br>
   </details>
 </details>
@@ -53,7 +53,7 @@
     <b>3. Known bugs</b>
   </summary>
   <ul>
-    <li>You can't stop the motor by setting the rotation speed to '0', since the calculation for a delay is <code>(1024/speed)*100</code> and speed will be devided by '0'.</li>
+    <li>There are no known bugs</li>
   </ul>
   <br>
 </details>
